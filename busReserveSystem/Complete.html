@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+	<meta charset="EUC-KR">
+	<script src="script/jquery-3.1.1.min.js"></script>
+    <style type="text/css">
+        fieldset{
+            position: relative;
+            display:block;
+             position:relative;
+             top:8%;
+             left:3%; 
+             width:750px;
+             height:500px;
+             padding:10px;
+             border-radius:20px; 
+             border: 0px solid white;
+             font-size:20px;
+             font-weight:600;
+             color:#ffffff; 
+             text-decoration: none; 
+             line-height:30px; 
+             text-align:center;
+             background:rgba(0, 0, 0, 0.32);
+            margin-left: 290px;
+            margin-top: 70px;
+        }
+        
+        .homeButton span{
+             display:block;
+             position:relative;
+             top:0;
+             right:0; 
+             width:150px;
+             height:30px;
+             padding:10px;
+             border-radius:20px; 
+             border: 2px solid white;
+             font-size:20px;
+             font-weight:900;
+             color:#ffffff; 
+             text-decoration: none; 
+             line-height:30px; 
+             text-align:center;
+             background:rgba(255, 255, 255, 0); 
+            margin-top: 150px;
+            }
+        
+        .button {
+          transition: all 0.5s;
+          cursor: pointer;
+          margin: 5px;
+        }
+
+        .button span {
+          cursor: pointer;
+          display: inline-block;
+          position: relative;
+          transition: 0.5s;
+        }
+
+        .button span:after {
+          content: '\00bb';
+          position: absolute;
+          opacity: 0;
+          top: 7px;
+          right: 10px;
+          margin-right: 40px;
+          transition: 0.5s;
+        }
+
+        .button:hover span {
+          padding-right: 25px;
+        }
+
+        .button:hover span:after {
+          opacity: 1;
+          right: 0;
+        }
+        
+        .alert {
+            margin-top: 150px;
+            font-size: 50px;
+            color:rgba(255, 0, 0, 0.70);
+            animation:myfirst 7s;
+            -moz-animation:myfirst 7s infinite; /* Firefox */
+            -webkit-animation:myfirst 7s infinite; /* Safari and Chrome */
+            
+          }
+
+
+          @-moz-keyframes myfirst /* Firefox */
+            {
+                0%   {color:rgba(0, 0, 0, 0.70);}
+                50%  {color:rgba(255, 255, 255, 255.70);}
+                100%  {color:rgba(0, 0, 0, 0.70);}
+            }
+
+            @-webkit-keyframes myfirst /* Safari and Chrome */
+            {
+                0%   {color:rgba(0, 0, 0, 0.70);}
+                50%  {color:rgba(255, 255, 255, 255.70);}
+                100%  {color:rgba(0, 0, 0, 0.70);}
+            }
+        
+        body{
+            position:static;
+         width:100%;
+         height:100%;
+         min-width:1024px;
+         min-height:768px;
+         background-image: url(image/slider_image_1.jpg);
+         background-size:cover;
+         text-align:center;
+            overflow: hidden;
+        }
+        
+        .shadow7 {
+              color: black;
+              text-shadow: rgba(255, 255, 255, 0.72) 0px 0px 10px; /* for browsers without spread support */
+              text-shadow: rgba(255, 255, 255, 0.72) 0px 0px 10px 10px; /* for browsers with spread support */
+            }
+    </style>
+    
+    <SCRIPT>
+    	$(document).ready(function(){
+    		$('div.button').find('span').click(function(){
+    			location.replace('LoginMain.php');
+    		});
+    	});
+    </SCRIPT>
+</HEAD>
+
+<BODY>
+    <fieldset>
+        <div class="alert shadow7">처리가 완료 되었습니다.</div>
+        <div class="homeButton button"><span>홈으로</span></div>
+    </fieldset>
+</BODY>
+</HTML>

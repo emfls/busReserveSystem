@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+    <TITLE>메인 페이지</TITLE>
+    <script src="script/jquery-3.1.1.min.js"></script>
+    <style type="text/css">
+    	.a{
+            position: absolute;
+            margin-left: -550px;
+        }
+         .loginForm{
+             position: absolute;
+             top: 610px; 
+             left: 880px; 
+             width:435px; 
+             height: 300px; 
+             overflow:hidden; 
+             margin-top: -150px; 
+             margin-left: -100px;
+            }
+        
+         .loginForm .box{
+             width:326px
+            }
+        
+         .loginForm .box .iText{
+             width:300px;
+             margin:3px 0;
+             padding:10px 12px;
+             border:1px solid #909090;
+             color: rgba(0, 0, 0, 0.32)
+            }
+        
+         .loginForm .box p{
+             margin-top:auto
+            }
+        
+         .loginForm .box p span,
+         .loginForm .box p span a,
+         .loginForm .box p input{
+             height:18px;
+             font-size:11px;
+             color:#ffffff;
+             line-height:18px;
+             vertical-align:middle; 
+             text-decoration: none;
+            }
+        
+        .loginForm .box p span a{
+            margin-left: 167px
+            }
+        
+         .loginForm .loginBtn{
+             display:block;
+             position:absolute;
+             top:0;
+             right:0; 
+             width:80px;
+             height:85px;
+             padding:10px;
+             border-radius:20px; 
+             border: 2px solid white;
+             font-size:14px;
+             font-weight:900;
+             color:#ffffff; 
+             text-decoration: none; 
+             line-height:60px; 
+             text-align:center;
+             background:rgba(255, 255, 255, 0); 
+            }
+        
+        img{
+            position: relative;  
+            left: 44%; 
+            margin-top: 30px;
+            }
+        
+        body{
+            position:static;
+         width:100%;
+         height:100%;
+
+         background-image: url(image/slider_image_1.jpg);
+         background-size:cover;
+         text-align:center;
+        }
+        .fieldset1{
+            position: absolute;
+            margin-left: -10px;
+            margin-top: 430px;
+            width: 100%;
+            height: 130px;
+            display: block;
+            border: 0px solid gray;
+            background-color: rgba(0, 0, 0, 0.32);
+        }
+        .fieldset2{
+            position: absolute;
+            margin-left: 735px;
+            margin-top: -10px;
+            width: 480px;
+            height: 100%;
+            display: block;
+            border: 0px solid gray;
+            background-color: rgba(0, 0, 0, 0.32);
+        }
+        
+        .submit:hover{
+            color: red;
+            border: 2px solid red;
+            transition-property: all;
+            transition-duration: 1s;
+            transition-timing-function: linear;
+        }
+        
+    </style>
+    
+    <script type="text/javascript">
+        function CheckElement(form) {
+      // ID와 비밀번호 값을 변수에 담아 필수 엘레먼트가 입력되었는지 확인하여 알려주는 함수
+      var email = document.getElementsByName("email");
+      var password = document.getElementsByName("pass");
+            
+      if(email[0].value == "") {
+         alert("email을 입력하세요!");
+         return;
+      } else if(password[0].value == "") {
+         alert("비밀번호를 입력하세요!");
+         return;
+      } // 필수 엘레먼트가 입력되었는지 확인하는 작업
+      form.submit();
+   }
+        
+    </script>
+    
+    <script>
+        $(function(){
+             $(".submit").mouseover(function(){
+                 $(".fieldset1").css({"transition": "width 3s","width": "0%"}); 
+                 $(".fieldset2").css({"transition": "height 3s","height": "0%"}); 
+             });
+            $(".submit").mouseout(function(){
+                 $(".fieldset1").css({"transition": "width 3s","width": "100%"}); 
+                 $(".fieldset2").css({"transition": "height 3s","height": "100%"}); 
+             });
+        });
+    </script>
+    
+</HEAD>
+<BODY style="overflow:hidden;">
+<img src="image/KakaoTalk_20170113_201645388.png" class="a">
+    <!--<img src="bus.png">-->
+        <fieldset class="fieldset1"></fieldset>
+    <fieldset class="fieldset2"></fieldset>
+        <div class="loginForm">
+            <form method="post" name="loginform" action="LoginCheck.php" >
+
+               <div class="box">
+                <input type="email" name="email" class="iText" placeholder="이메일을 입력하세요.">
+
+                <br>
+                <input type="password" name="pass" id="" class="iText" placeholder="패스워드 입력하세요.">
+                <br>
+
+                <p>
+                  <span class="fleft"><input type="checkbox" id="">
+                      <label for="">이메일 저장</label><!--쿠키 관련이기 때문에 나중에-->
+                    </span> 
+
+                  <span class="fleft">
+                      <a href="Membership_join.html">회원가입</a>
+                    </span>
+                </p>
+
+              </div>
+                <input class="loginBtn submit hvr-ripple-out" type="button" value="login" onClick="javascript:CheckElement(this.form)"/>
+            </form>
+        </div>
+</BODY>
+</HTML>
